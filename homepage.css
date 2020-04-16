@@ -1,0 +1,74 @@
+/* Column CSS taken from W3Schools.com*/
+/* Create three equal columns that floats next to each other */
+.row{
+  color: #ffffe6;
+}
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+}
+* {
+    box-sizing: border-box;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other and diplays the paragraph without breaks*/
+@media (max-width: 768px) {
+    .column {
+        width: 100%;
+    }
+    .break{
+      display:none;
+    }
+    .about{
+      text-align: center;
+    }
+}
+
+/* Column Text*/
+p{
+  line-height: 32px;
+}
+h3{
+  line-height: 5px;
+  text-decoration: underline;
+}
+
+/* UVic Hyperlink */
+/* unvisited link */
+a:link {
+    color: #66ccff;
+}
+
+/* visited link */
+a:visited {
+    color: #66ccff;
+}
+/* selected link */
+a:active {
+    color: #66ccff;
+}
+
+/* Logo and About Section */
+.text {
+float:right;
+font-weight: bold;
+}
+.image{
+  position: relative;
+  left:140px;
+  top:15px;
+  border-radius: 5%;
+  border-style: outset;
+}
+body{
+  color: white;
+  background-color: #377B8C;
+}

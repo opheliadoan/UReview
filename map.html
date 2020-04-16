@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name = "viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="navigation_bar_style.css">
+  <style>
+    body {
+      background-color: #377B8C;
+      color: white;
+      text-align: center;
+    }
+    #map {
+      height: 650px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class ="icon-bar">
+      <!--Go to homepage: INSERT_THE_URL_HERE-->
+      <a  href="file:///Users/phuonganhdoan/Desktop/homepage_update.html"><i class="fa fa-home"></i></a>
+      <!--Go to maps and directions-->
+      <a class= "active" href="file:///Users/phuonganhdoan/Desktop/map.html"><i class = "material-icons">place</i></a>
+      <!--Go to forum page: INSERT_THE_URL_HERE-->
+      <a href="file:///Users/phuonganhdoan/Desktop/meal_update.html"><i class = "material-icons">forum</i></a>
+      <!--Go to your account: INSERT_THE_URL_HERE-->
+      <a href="#"><i class = "material-icons">account_circle</i></a>
+    </div>
+  <h2>Maps and Directions</h2>
+  <div>
+    <div id="map"></div>
+
+    <script asynce defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZrq3DrdQRZRHC1DHyLeG4QCtCX4RrnRw&callback=myMap">
+    </script>
+  </div>
+
+  <script>
+    function myMap() {
+      var locations = [["Cadboro Commons Dining Room", 48.464732, -123.306561],["Village Greens", 48.464132, -123.306760],["Cap's Bistro", 48.463745, -123.306452], ["Arts Place", 48.462172, -123.316727], ["Bibliocafe", 48.463596, -123.309931], ["Court Cafe", 48.465228, -123.316265], ["Halftime", 48.468152, -123.310993], ["Mac's Bistro", 48.462930, -123.313351], ["Mystic Market", 48.464954, 123.311645], ["Bibbles & Bytes", 48.461436, -123.310579], ["SciCafe", 48.462293, -123.308920]]
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 17, 
+        center: new google.maps.LatLng(48.465160, -123.311580),
+        mapTypeId: google.maps.MapTypeId.ROADMAP});
+
+      var marker, i;
+
+      for(i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+          position : new google.maps.LatLng(locations[i][1], locations[i][2]),
+          map: map,
+          
+        });
+        
+        //INFOWINDOW DOESNT WORK 
+        //HAVE TRIED: 2 ARRAYS -> FAILED
+
+        /*google.maps.event.addListener(marker, 'click', function(){
+          var infowindow = new google.maps.InfoWindow({content: locations[i][0]});
+          infowindow.open(map,marker);
+        }*/
+      }
+    }
+  </script>
+</body>
+</html>

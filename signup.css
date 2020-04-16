@@ -1,0 +1,83 @@
+body{
+  background-color: #377B8C;
+  color:white;
+  text-align: center;
+  line-height: 30px;
+  font-family: sans-serif;
+}
+
+h1{
+  font-size: 60px;
+}
+
+/* Login Hyperlink */
+/* unvisited link */
+a:link {
+    color: #66ccff;
+}
+
+/* visited link */
+a:visited {
+    color: #66ccff;
+}
+/* selected link */
+a:active {
+    color: #66ccff;
+}
+
+/* Responsive Layout for Laptop */
+@media(min-width:1030px){
+  .break{
+    display: none;
+  }
+
+  .ipad{
+    display: none;
+  }
+
+  .pro{
+    display: none;
+  }
+}
+
+/* Responsive layout for Ipad Pro */
+@media screen and (max-width:1025px) and (min-width:800px){
+    h1{
+      font-size: 90px;
+    }
+
+    h2{
+      font-size: 40px;
+    }
+
+    img{
+      width:600px;
+      height: 550px;
+    }
+
+}
+
+
+/* Responsive Layout for Phones */
+@media(max-width:700px){
+  h1{
+    font-size: 30px;
+  }
+
+  img{
+    width:250px;
+    height: 200px;
+  }
+
+  h2{
+    font-size: 15px;
+  }
+
+  .ipad{
+    display: none;
+  }
+
+  .pro{
+    display: none;
+  }
+}
